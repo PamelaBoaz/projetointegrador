@@ -1,0 +1,28 @@
+RAIZAGRO
+Isabelle, Luccas, Pamela, Thiago, Witer
+
+tb_usuario
+id
+nomeCompleto: Realizar a identificação do usuário
+email: Utilizar como login (será único por usuário)
+senha: Senha para acesso ao aplicativo
+
+tb_tema
+id
+categoria: Mostrar a categoria do produto (Legumes, Verduras, Flores)
+promocao: Identificar se o produto está em promoção ou não (boolean)
+localizacao: Mostrar a localização do produto a ser vendido
+
+tb_postagem
+id
+dataPost: Identificar data e hora da postagem
+descricao: Mostrar informações do produto que está a venda
+foto: Usuário poderá adicionar fotos do produto a venda
+recomendacao: Usuários compradores poderão dizer se recomendam o produto (escala de 1 a 5)
+usuario_id
+tema_id
+
+
+
+
+
