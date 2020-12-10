@@ -2,25 +2,29 @@ RAIZAGRO
 Isabelle, Luccas, Pamela, Thiago, Witer
 
 tb_usuario
-id
-nomeCompleto: Realizar a identificação do usuário
-email: Utilizar como login (será único por usuário)
-senha: Senha para acesso ao aplicativo
+
+id (long): Indentificador usuário.
+nomeCompleto (String): Realizar a identificação do usuário
+email (String): Utilizar como login (será único por usuário)
+senha (String): Senha para acesso ao aplicativo
 
 tb_tema
-id
-categoria: Mostrar a categoria do produto (Legumes, Verduras, Flores)
-promocao: Identificar se o produto está em promoção ou não (boolean)
-localizacao: Mostrar a localização do produto a ser vendido
+id (long): Indentificador tema.
+categoria (String): Mostrar a categoria do produto (Legumes, Verduras, Flores).
+ativo (boolean): Mostrar se o tema está ativo.
+descricao (String): Descrever o tema.
 
 tb_postagem
-id
-dataPost: Identificar data e hora da postagem
-descricao: Mostrar informações do produto que está a venda
-foto: Usuário poderá adicionar fotos do produto a venda
-recomendacao: Usuários compradores poderão dizer se recomendam o produto (escala de 1 a 5)
-usuario_id
-tema_id
+id (long): Indentificador postagem.
+dataPost (TIMESTAMP): Identificar data e hora da postagem
+descricao (String): Mostrar informações do produto que está a venda
+foto (blob): Usuário poderá adicionar fotos do produto a venda
+maduro (boolean):Frutos maduros e imperfeitos> nossa intenção é incentivar o consumo consciente dos produtos que não estão no padrão de 
+comercialização mas que mantém o mesmo valor nutritivo e os que estão maduros demais para venda mas ainda sim bons para 
+consumir. Além de custar 30% mais barato, esse consumo evita o disperdício de toneladas de alimento.
+localizacao (String): Mostrar a localização do usuario responsavel pela postagem.
+usuario_id (long)
+tema_id (long)
 
 
 

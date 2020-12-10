@@ -5,7 +5,8 @@ CREATE TABLE tb_postagem (
 	dataPost TIMESTAMP NOT NULL,
 	descricao varchar(255) NOT NULL,
 	foto blob ,
-	recomendacao int,
+	localizacao varchar(255) NOT NULL,
+	maduro BOOLEAN NOT NULL
 	usuario_id bigint NOT NULL,
 	tema_id bigint NOT NULL,
 	PRIMARY KEY (id),
@@ -16,8 +17,8 @@ CREATE TABLE tb_postagem (
 CREATE TABLE tb_tema (
 	id bigint AUTO_INCREMENT,
 	categoria varchar(255) NOT NULL,
-	promocao BOOLEAN NOT NULL,
-	localizacao varchar(255) NOT NULL,
+	ativo BOOLEAN NOT NULL,
+	descricao varchar(255) NOT NULL,
 	PRIMARY KEY (id)
 );
 
