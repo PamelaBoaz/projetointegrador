@@ -1,6 +1,7 @@
 RAIZAGRO
 Isabelle, Luccas, Pamela, Thiago, Witer
 
+
 tb_usuario
 
 id (long): Indentificador usuário.
@@ -26,6 +27,47 @@ localizacao (String): Mostrar a localização do usuario responsavel pela postag
 usuario_id (long)
 tema_id (long)
 
+----------------------------------------------------------------------------------------------------------------//--------------------------------------------------------------------------------------------------------------------------
+#Model
+
+********Tema********
+
+-id long : Indentificador de tema 
+
+-categoria String: Mostrar a categoria do produto (Legumes, Verduras, Flores).
+
+-descricao String: Descrever o tema.
+
+-ativo boolean: Mostrar se o tema está ativo.
+
+
+#Repository
+
+********TemaRepository********
+
+-public List<Tema> findAllByCategoriaContainingIgnoreCase(String categoria) : Método de buscar por categorias da tabela tema;
+
+-public List<Tema> findByDescricaoContainingIgnoraCase(String descricao); Método de busca por descrição da tabela tema;
+
+#Controller
+
+********TemaController********
+  
+-TemaRepository repository :@Autowired Instanciação da interface TemaRepository para utilização de metodos específicos; 
+
+-public ResponseEntity<List<Tema>> findAll():@GetMapping  Método de consulta dos dados em geral da tabela tema; 
+
+-public ResponseEntity<Tema> findById(@PathVariable Long id): @GetMapping("/{id}") Método de consulta por id da tabela tema;
+
+-public ResponseEntity<List<Tema>> findByCategoria(@PathVariable String categoria):@GetMapping("/categoria/{categoria}") Método de consulta por categoria especificada; 
+
+-public ResponseEntity<List<Tema>> findByDescricao(@PathVariable String descricao):@GetMapping("/descricao/{descricao}")  Método de consulta por descrição especificada; 
+
+-public ResponseEntity<Tema> post(@RequestBody Tema tema):@PostMapping método de inserção de dados na tabela tema;
+
+-public ResponseEntity<Tema> put(@RequestBody Tema tema):@PutMapping método de atualização de dados da tabela tema;
+
+-public void delete(@PathVariable Long id):@DeleteMapping("/{id}") método de deleção de dados por id da tabela tema;  
 
 
 
