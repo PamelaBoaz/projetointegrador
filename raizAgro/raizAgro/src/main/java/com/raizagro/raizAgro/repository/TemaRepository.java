@@ -10,7 +10,7 @@ import com.raizagro.raizAgro.model.Tema;
 @Repository
 public interface TemaRepository extends JpaRepository<Tema, Long>{
 	
-	public List<Tema> findByCategoriaContainingIgnoreCase(String tema);
+	public List<Tema> findAllByCategoriaContainingIgnoreCase(String categoria);
 	
 	public List<Tema> findByDescricaoContainingIgnoraCase(String descricao);
 
