@@ -27,15 +27,25 @@ public class PostagemController {
 	private PostagemRepository repository;
 
 	@GetMapping
-	private ResponseEntity<List<Postagem>> findAllPostagem() {
+	public ResponseEntity<List<Postagem>> findAllPostagem() {
 		return ResponseEntity.ok(repository.findAll());
 
 	}
 
 	@GetMapping("/{id}")
-	private ResponseEntity<Postagem> findById(@PathVariable Long id) {
+	public ResponseEntity<Postagem> findById(@PathVariable Long id) {
 		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
+	
+	@GetMapping("/localizacao/{localizacao}")
+	public ResponseEntity<List<Postagem>> findByLocalizacao(@PathVariable String localizacao) {
+		return ResponseEntity.ok(repository.findAllByLocalizacaoContainingIgnoreCase(localizacao));
+	}
+	
+	@GetMapping("/maduro/{maduro}")
+	public ResponseEntity<List<Postagem>> findByMaduro(@PathVariable boolean maduro) {
+		return ResponseEntity.ok(repository.findByMaduroIs (maduro));	
+	}	
 
 	@PostMapping
 	public ResponseEntity<Postagem> post(@RequestBody Postagem postagem) {

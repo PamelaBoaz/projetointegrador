@@ -35,6 +35,11 @@ public class UsuarioController {
 	public ResponseEntity<Usuario> findById(@PathVariable Long id) {
 		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
+	
+	@GetMapping("/nomeCompleto/{nomeCompleto}")
+	public ResponseEntity<List<Usuario>> findByNomeCompleto(@PathVariable String nomeCompleto) {
+		return ResponseEntity.ok(repository.findAllByNomeCompletoContainingIgnoreCase(nomeCompleto));
+	}
 
 	@PostMapping
 	public ResponseEntity<Usuario> post(@RequestBody Usuario usuario) {
