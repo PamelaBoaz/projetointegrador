@@ -12,6 +12,6 @@ public interface TemaRepository extends JpaRepository<Tema, Long>{
 	
 	public List<Tema> findAllByCategoriaContainingIgnoreCase(String categoria);
 	
-	public List<Tema> findByDescricaoContainingIgnoraCase(String descricao);
+	public List<Tema> findAllByDescricaoContainingIgnoreCase(String descricao);
 
 }
