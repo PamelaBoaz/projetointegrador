@@ -70,5 +70,40 @@ tema_id (long)
 -public void delete(@PathVariable Long id):@DeleteMapping("/{id}") método de deleção de dados por id da tabela tema;  
 
 
+******PostagemController********
+-PostagemRepository repository :@Autowired Instanciação da interface PostagemRepository para utilização de metodos específicos; 
+
+-public ResponseEntity<List<Postagem>> findAll():@GetMapping  Método de consulta dos dados em geral da tabela postagem; 
+
+-public ResponseEntity<Postagem> findById(@PathVariable Long id): @GetMapping("/{id}") Método de consulta por id da tabela postagem;
+
+-public ResponseEntity<List<Postagem>> findByLocalizacao(@PathVariable String lcalizacao):@GetMapping("/localizacao/{localizacao}") Método de consulta por localização especifica; 
+
+-public ResponseEntity<List<Postagem>> findByMaduro(@PathVariable boolean maduro):@GetMapping("/maduro/{maduro}")  Método de consulta pora saber se a postagem é ativa ou não; 
+
+-public ResponseEntity<Postagem> post(@RequestBody Postagem postagem):@PostMapping método de inserção de dados na tabela postagem;
+
+-public ResponseEntity<Postagem> put(@RequestBody Postagem postagem):@PutMapping método de atualização de dados da tabela postagem;
+
+-public void delete(@PathVariable Long id):@DeleteMapping("/{id}") método de deleção de dados por id da tabela usuario;
+
+*****UsuarioController********
+-UsuaruiRepository repository :@Autowired Instanciação da interface UsuarioRepository para utilização de métodos específicos; 
+
+-public ResponseEntity<List<Usuario>> findAll():@GetMapping  Método de consulta dos dados em geral da tabela usuario; 
+
+-public ResponseEntity<Usuario> findById(@PathVariable Long id): @GetMapping("/{id}") Método de consulta por id da tabela usuario;
+
+**-public ResponseEntity<List<Usuario>> findByNomeCompleto(@PathVariable String nomeCompleto):@GetMapping("/nomeCompleto/{nomeCompleto}") Método de consulta por nome completo especificado; 
+
+-public ResponseEntity<Usuario> post(@RequestBody Usuario usuario):@PostMapping método de inserção de dados na tabela usuario;
+
+-public ResponseEntity<Postagem> put(@RequestBody Postagem postagem):@PutMapping método de atualização de dados da tabela usuario;
+
+-public void delete(@PathVariable Long id):@DeleteMapping("/{id}") método de deleção de dados por id da tabela usuario;
+
+
+
+
 
 
