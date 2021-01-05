@@ -22,6 +22,7 @@ public class UsuarioService {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
 		Optional<Usuario> usuarioPresente = repository.findByUsuario(usuario.getUsuario());
+		
 
 		if (usuarioPresente.isPresent()) {
 			return null;

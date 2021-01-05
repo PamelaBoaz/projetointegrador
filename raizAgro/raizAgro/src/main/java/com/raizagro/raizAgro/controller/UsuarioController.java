@@ -2,6 +2,8 @@ package com.raizagro.raizAgro.controller;
 
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,11 +32,12 @@ public class UsuarioController {
 	}
 	
 	@PostMapping("/cadastrar")
-	public ResponseEntity<Usuario> Post(@RequestBody Usuario usuario) {
+	public ResponseEntity<Usuario> Post(@RequestBody @Valid Usuario usuario) {
 		
 		// return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.CadastrarUsuario(usuario));
 
 		Usuario user = usuarioService.CadastrarUsuario(usuario);
+		
 		if (user == null) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 		}
