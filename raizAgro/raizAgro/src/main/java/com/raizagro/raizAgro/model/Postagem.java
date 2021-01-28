@@ -49,16 +49,6 @@ public class Postagem {
 	private Usuario usuario;
 	
 	
-	private String foto; 
-
-	public String getFoto() {
-		return foto;
-	}
-
-	public void setFoto(String foto) {
-		this.foto = foto;
-	}
-
 	public long getId() {
 		return id;
 	}
