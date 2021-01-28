@@ -6,7 +6,7 @@ CREATE TABLE tb_postagem (
 	descricao varchar(255) NOT NULL,
 	foto blob ,
 	localizacao varchar(255) NOT NULL,
-	maduro BOOLEAN NOT NULL
+	contato varchar(255),
 	usuario_id bigint NOT NULL,
 	tema_id bigint NOT NULL,
 	PRIMARY KEY (id),
@@ -16,7 +16,7 @@ CREATE TABLE tb_postagem (
 
 CREATE TABLE tb_tema (
 	id bigint AUTO_INCREMENT,
-	categoria varchar(255) NOT NULL,
+	nome varchar(255) NOT NULL,
 	ativo BOOLEAN NOT NULL,
 	descricao varchar(255) NOT NULL,
 	PRIMARY KEY (id)
