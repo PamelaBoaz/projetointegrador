@@ -12,6 +12,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -26,8 +27,10 @@ public class Postagem {
 	@Column(name = "data_postagem")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataPostagem = new java.sql.Date(System.currentTimeMillis());
-
-	private boolean maduro;
+	
+	//alterado atributo maduro do tipo booleano, para contato do tipo String
+	@Size(max = 100)
+	private String contato;
 
 	@NotNull
 	private String descricao;
@@ -42,6 +45,17 @@ public class Postagem {
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
 	private Usuario usuario;
+	
+	
+	private String foto; 
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
 
 	public long getId() {
 		return id;
@@ -59,12 +73,12 @@ public class Postagem {
 		this.dataPostagem = dataPostagem;
 	}
 
-	public boolean isMaduro() {
-		return maduro;
+	public String getContato() {
+		return contato;
 	}
 
-	public void setMaduro(boolean maduro) {
-		this.maduro = maduro;
+	public void setContato(String contato) {
+		this.contato = contato;
 	}
 
 	public String getDescricao() {

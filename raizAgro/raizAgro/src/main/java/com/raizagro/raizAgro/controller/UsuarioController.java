@@ -19,7 +19,7 @@ import com.raizagro.raizAgro.service.UsuarioService;
 
 @RestController
 @RequestMapping("/usuarios")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin("*")
 public class UsuarioController {
 
 	@Autowired

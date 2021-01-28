@@ -10,7 +10,8 @@ import com.raizagro.raizAgro.model.Tema;
 @Repository
 public interface TemaRepository extends JpaRepository<Tema, Long>{
 	
-	public List<Tema> findAllByCategoriaContainingIgnoreCase(String categoria);
+	//Alterado categoria para Nome
+	public List<Tema> findAllByNomeContainingIgnoreCase(String nome);
 	
 	public List<Tema> findAllByDescricaoContainingIgnoreCase(String descricao);
 

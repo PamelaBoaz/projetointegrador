@@ -22,9 +22,10 @@ public class Tema {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
+	//Alterado o nome do atributo categoria para nome
 	@NotNull
 	@Size(min = 2, max = 255)
-	private String categoria;
+	private String nome;
 
 	@NotNull
 	private boolean ativo;
@@ -45,12 +46,12 @@ public class Tema {
 		this.id = id;
 	}
 
-	public String getCategoria() {
-		return categoria;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public boolean isAtivo() {
