@@ -2,7 +2,6 @@ package com.raizagro.raizAgro.model;
 
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,10 +23,12 @@ public class Postagem {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	@Column(name = "data_postagem")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataPostagem = new java.sql.Date(System.currentTimeMillis());
 	
+	@NotNull
+	private String titulo;
+
 	//alterado atributo maduro do tipo booleano, para contato do tipo String
 	@Size(max = 100)
 	private String contato;
@@ -55,6 +56,13 @@ public class Postagem {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
 
 	public Date getDataPostagem() {
