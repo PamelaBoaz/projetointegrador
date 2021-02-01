@@ -12,6 +12,8 @@ public interface PostagemRepository extends JpaRepository<Postagem, Long> {
 	
 	public List<Postagem> findAllByLocalizacaoContainingIgnoreCase (String localizacao);
 	
-	public List<Postagem> findByContatoContainingIgnoreCase (String contato);
+	public List<Postagem> findByTituloContainingIgnoreCase (String titulo);
+	
+	public List<Postagem> findByUsuario(String usuario);
 
 }	

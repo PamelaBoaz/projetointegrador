@@ -24,11 +24,16 @@ public class Postagem {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
+	//Adicionando Titulo
+	@NotNull
+	@Size(min = 2, max = 100)
+	private String titulo;
+
 	@Column(name = "data_postagem")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataPostagem = new java.sql.Date(System.currentTimeMillis());
-	
-	//alterado atributo maduro do tipo booleano, para contato do tipo String
+
+	// alterado atributo maduro do tipo booleano, para contato do tipo String
 	@Size(max = 100)
 	private String contato;
 
@@ -37,7 +42,7 @@ public class Postagem {
 
 	@NotNull
 	private String localizacao;
-	
+
 	private String foto;
 
 	@ManyToOne
@@ -47,14 +52,21 @@ public class Postagem {
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
 	private Usuario usuario;
-	
-	
+
 	public long getId() {
 		return id;
 	}
 
 	public void setId(long id) {
 		this.id = id;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
 
 	public Date getDataPostagem() {
@@ -112,7 +124,5 @@ public class Postagem {
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}
-	
-	
 
 }
