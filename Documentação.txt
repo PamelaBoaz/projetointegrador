@@ -11,7 +11,7 @@ senha (String): Senha para acesso ao aplicativo
 
 tb_tema
 id (long): Indentificador tema.
-categoria (String): Mostrar a categoria do produto (Legumes, Verduras, Flores).
+nome(String): Mostrar a nome do tema (Legumes, Verduras, Flores).
 ativo (boolean): Mostrar se o tema está ativo.
 descricao (String): Descrever o tema.
 
@@ -20,9 +20,7 @@ id (long): Indentificador postagem.
 dataPost (TIMESTAMP): Identificar data e hora da postagem
 descricao (String): Mostrar informações do produto que está a venda
 foto (blob): Usuário poderá adicionar fotos do produto a venda
-maduro (boolean):Frutos maduros e imperfeitos> nossa intenção é incentivar o consumo consciente dos produtos que não estão no padrão de 
-comercialização mas que mantém o mesmo valor nutritivo e os que estão maduros demais para venda mas ainda sim bons para 
-consumir. Além de custar 30% mais barato, esse consumo evita o disperdício de toneladas de alimento.
+contato(String):Campo para adicionar contato de quem fez a postagem para futura conexão com interessados
 localizacao (String): Mostrar a localização do usuario responsavel pela postagem.
 usuario_id (long)
 tema_id (long)
@@ -34,7 +32,7 @@ tema_id (long)
 
 -id long : Indentificador de tema 
 
--categoria String: Mostrar a categoria do produto (Legumes, Verduras, Flores).
+-nome String: nome  do tema (Legumes, Verduras, Flores).
 
 -descricao String: Descrever o tema.
 
@@ -45,7 +43,7 @@ tema_id (long)
 
 ********TemaRepository********
 
--public List<Tema> findAllByCategoriaContainingIgnoreCase(String categoria) : Método de buscar por categorias da tabela tema;
+-public List<Tema> findAllByNomeContainingIgnoreCase(String categoria) : Método de buscar por nomes da tabela tema;
 
 -public List<Tema> findByDescricaoContainingIgnoraCase(String descricao); Método de busca por descrição da tabela tema;
 
@@ -59,7 +57,7 @@ tema_id (long)
 
 -public ResponseEntity<Tema> findById(@PathVariable Long id): @GetMapping("/{id}") Método de consulta por id da tabela tema;
 
--public ResponseEntity<List<Tema>> findByCategoria(@PathVariable String categoria):@GetMapping("/categoria/{categoria}") Método de consulta por categoria especificada; 
+-public ResponseEntity<List<Tema>> findByNome(@PathVariable String nome):@GetMapping("/nome/{nome}") Método de consulta por nome especificado; 
 
 -public ResponseEntity<List<Tema>> findByDescricao(@PathVariable String descricao):@GetMapping("/descricao/{descricao}")  Método de consulta por descrição especificada; 
 
@@ -79,7 +77,7 @@ tema_id (long)
 
 -public ResponseEntity<List<Postagem>> findByLocalizacao(@PathVariable String lcalizacao):@GetMapping("/localizacao/{localizacao}") Método de consulta por localização especifica; 
 
--public ResponseEntity<List<Postagem>> findByMaduro(@PathVariable boolean maduro):@GetMapping("/maduro/{maduro}")  Método de consulta pora saber se a postagem é ativa ou não; 
+-public ResponseEntity<List<Postagem>> findByContato(@PathVariable String contato):@GetMapping("/contato/{contato}")  Método de consulta de contato; 
 
 -public ResponseEntity<Postagem> post(@RequestBody Postagem postagem):@PostMapping método de inserção de dados na tabela postagem;
 

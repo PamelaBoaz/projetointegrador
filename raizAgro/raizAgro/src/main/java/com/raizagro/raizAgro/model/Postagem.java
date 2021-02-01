@@ -24,7 +24,7 @@ public class Postagem {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	//Adicionando Titulo
+	// Adicionando Titulo
 	@NotNull
 	@Size(min = 2, max = 100)
 	private String titulo;
@@ -101,6 +101,14 @@ public class Postagem {
 		this.localizacao = localizacao;
 	}
 
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
 	public Tema getTema() {
 		return tema;
 	}
@@ -115,14 +123,6 @@ public class Postagem {
 
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
-	}
-
-	public String getFoto() {
-		return foto;
-	}
-
-	public void setFoto(String foto) {
-		this.foto = foto;
 	}
 
 }
