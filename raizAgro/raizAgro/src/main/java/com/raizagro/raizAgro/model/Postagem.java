@@ -33,9 +33,12 @@ public class Postagem {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataPostagem = new java.sql.Date(System.currentTimeMillis());
 
-	// alterado atributo maduro do tipo booleano, para contato do tipo String
+	// alterado atributo maduro do tipo booleano, para telefone do tipo String
 	@Size(max = 100)
-	private String contato;
+	private String telefone;
+
+	//Adicionando email
+	private String email;
 
 	@NotNull
 	private String descricao;
@@ -77,12 +80,20 @@ public class Postagem {
 		this.dataPostagem = dataPostagem;
 	}
 
-	public String getContato() {
-		return contato;
+	public String getTelefone() {
+		return telefone;
 	}
 
-	public void setContato(String contato) {
-		this.contato = contato;
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getDescricao() {
@@ -124,5 +135,4 @@ public class Postagem {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-
 }
