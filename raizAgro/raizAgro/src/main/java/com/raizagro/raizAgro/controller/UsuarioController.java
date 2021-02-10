@@ -58,7 +58,7 @@ public class UsuarioController {
 		Usuario user = usuarioService.CadastrarUsuario(usuario);
 
 		if (user == null) {
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+			return ResponseEntity.status(HttpStatus.CONFLICT).build();
 		}
 		return ResponseEntity.status(HttpStatus.CREATED).body(user);
 	}
